@@ -11,5 +11,16 @@ bttn_list = [
   "1", "2", "3", "-/+", "=",
   "0", ".", "c", "", ""
 ]
+r = 1
+c = 0
 
+for i in bttn_list:
+  rel = ""
+  # cmd=lambda x=i:_#calc(x) 
+  ttk.Button(root, text=i, command=cmd).grid(row=r, column=c)
+  c += 1
+  if c>4:
+    c=0
+    r += 1
+    
 root.mainloop()
