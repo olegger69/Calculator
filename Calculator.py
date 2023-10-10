@@ -4,7 +4,7 @@ from tkinter import ttk
 
 root = Tk()
 root.title("Калькулятор")
-
+# Создаем все кнопки
 bttn_list = [
   "7", "8", "9", "+", "-",
   "4", "5", "6", "*", "/",
