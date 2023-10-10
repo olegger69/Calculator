@@ -5,15 +5,26 @@ from tkinter import ttk
 root = Tk()
 root.title("Калькулятор")
 
-#Логика Калькулятора
+# Логика Калькулятора
 def calc(key):
   global memory
   if key == "=":
     # исключаем написание букв
     str1 = "-+123456789.*/"
-    if calc_entry.get () [] not in str1:
+    if calc_entry.get () [0] not in str1:
       calc_entry.insert(END, "Первый символ не число!")
       messagebox.showerror("Ошибка!", "Вы ввели не число!")
+      
+    # счет
+    try:
+      result = eval(calc_entry.get())
+      calc_entry.insert(END, "=" + str(result))
+    except:
+      calc_entry.insert(END, "Ошибка!")
+      messagebox.showerror("Ошибка!", "Проверь правильность данных")
+      
+    # Очистить поле
+    
 # Создаем все кнопки
 bttn_list = [
   "7", "8", "9", "+", "-",
